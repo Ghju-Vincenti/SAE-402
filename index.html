@@ -1,43 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="https://glitch.com/favicon.ico" />
-    <title>Hello World!</title>
-    <link rel="stylesheet" href="/style.css" />
-    <script src="/script.js" defer></script>
-  </head>
-  <body>
+    <title>Basket Personnalisable</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+</head>
+<body>
+
     <div id="conteneur">
-      <svg
-        id="product-svg"
-        version="1.0"
-        xmlns="http://www.w3.org/2000/svg"
-        width="1200.000000px"
-        height="1200.000000px"
-        viewbox="0 0 1200.000000 1200.000000"
-        preserveaspectratio="xMidYMid meet"
-        fill: "red" 
-      >
-        <g
-          transform="translate(0.000000,1200.000000) scale(0.100000,-0.100000)"
+        <img 
+            id="background-image" 
+            src="https://cdn.glitch.global/7d36b6e2-5421-4e85-8263-ed9a0268be67/air-force.png?v=1741271250453" 
+            alt="Basket Blanche"
+        />
+        <svg
+            id="product-svg"
+            version="1.0"
+            xmlns="http://www.w3.org/2000/svg"
+            width="1200px"
+            height="1200px"
+            viewbox="0 0 1200 1200"
+            preserveaspectratio="xMidYMid meet"
         >
-          <path
-            id="product-shape"
-            
-            d="M1267 7213 c-63 -274 -88 -430 -112 -700 -15 -170 -19 -623 -7 -718
-l7 -49 48 59 c45 57 80 121 125 227 33 77 49 82 257 89 201 7 247 16 352 66
-81 39 205 145 188 161 -5 5 -89 70 -185 145 -264 204 -282 225 -429 512 -68
-132 -135 255 -150 274 -14 19 -33 48 -42 63 -15 29 -16 28 -52 -129z"
-          />
-        </g>
-      </svg>
-      <img
-        id="background-image"
-        src="https://cdn.glitch.global/7d36b6e2-5421-4e85-8263-ed9a0268be67/air-force.png?v=1741271250453"
-      />
-      
+            <g transform="translate(0,1200) scale(0.1,-0.1)">
+                <path
+                    id="product-shape"
+                    fill="#ff7f00"
+                    d="M1267 7213 c-63 -274 -88 -430 -112 -700 -15 -170 -19 -623 -7 -718
+                    l7 -49 48 59 c45 57 80 121 125 227 33 77 49 82 257 89 201 7 247 16 352 66
+                    81 39 205 145 188 161 -5 5 -89 70 -185 145 -264 204 -282 225 -429 512 -68
+                    132 -135 255 -150 274 -14 19 -33 48 -42 63 -15 29 -16 28 -52 -129z"
+                />
+            </g>
+        </svg>
     </div>
-  </body>
+
+    <!-- Boutons pour changer la couleur -->
+    <div class="button-container">
+        <button class="color-btn red" onclick="changerCouleur('#ff0000')">Rouge</button>
+        <button class="color-btn blue" onclick="changerCouleur('#0000ff')">Bleu</button>
+        <button class="color-btn green" onclick="changerCouleur('#008000')">Vert</button>
+        <button class="color-btn orange" onclick="changerCouleur('#ffa500')">Orange</button>
+        <button class="color-btn purple" onclick="changerCouleur('#800080')">Violet</button>
+    </div>
+
+</body>
 </html>

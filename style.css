@@ -1,30 +1,66 @@
-body,
-html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
+/* Réinitialisation des marges et hauteurs */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+/* Conteneur */
 #conteneur {
-  position: relative;
+    position: relative;
+    width: 1200px;
+    height: 1200px;
 }
-#product-svg {
-  position: relative;
-  z-index: 2;
-  mix-blend-mode: multiply;
-}
-#product-shape {
-  fill: #ff7f00;
-}
+
+/* Image de fond */
 #background-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
 }
+
+/* SVG superposé */
+#product-svg {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+}
+
+/* Partie colorable du SVG */
+#product-shape {
+    fill: #ff7f00; /* Couleur de départ */
+}
+
+/* Conteneur des boutons */
+.button-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Boutons */
+.color-btn {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
+
+.red { background-color: red; }
+.blue { background-color: blue; }
+.green { background-color: green; }
+.orange { background-color: orange; }
+.purple { background-color: purple; }
