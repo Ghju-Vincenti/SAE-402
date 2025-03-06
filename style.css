@@ -33,6 +33,12 @@
 }
 
 
+
+body {
+  font-family: HK Grotesk;
+  background-color: var(--color-bg);
+}
+
 body,
 html {
 margin: 0;
