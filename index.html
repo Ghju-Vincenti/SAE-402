@@ -1,49 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Basket Personnalisable</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basket Personnalisable - Air Force</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
-<body>
+<body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen p-4">
 
-    <div id="conteneur">
-        <img 
-            id="background-image" 
-            src="https://cdn.glitch.global/7d36b6e2-5421-4e85-8263-ed9a0268be67/air-force.png?v=1741271250453" 
-            alt="Basket Blanche"
-        />
-        <svg
-            id="product-svg"
-            version="1.0"
-            xmlns="http://www.w3.org/2000/svg"
-            width="1200px"
-            height="1200px"
-            viewbox="0 0 1200 1200"
-            preserveaspectratio="xMidYMid meet"
-        >
-            <g transform="translate(0,1200) scale(0.1,-0.1)">
-                <path
-                    id="product-shape"
-                    fill="#ff7f00"
-                    d="M1267 7213 c-63 -274 -88 -430 -112 -700 -15 -170 -19 -623 -7 -718
-                    l7 -49 48 59 c45 57 80 121 125 227 33 77 49 82 257 89 201 7 247 16 352 66
-                    81 39 205 145 188 161 -5 5 -89 70 -185 145 -264 204 -282 225 -429 512 -68
-                    132 -135 255 -150 274 -14 19 -33 48 -42 63 -15 29 -16 28 -52 -129z"
-                />
-            </g>
-        </svg>
+    <!-- En-tête -->
+    <header class="text-center mb-8">
+        <h1 class="text-4xl font-bold text-gray-800">Personnalisez votre Air Force</h1>
+        <p class="text-gray-600">Choisissez la couleur de votre basket et passez commande.</p>
+    </header>
+
+    <!-- Conteneur principal -->
+    <div class="bg-white shadow-lg rounded-lg overflow-auto"> <!-- overflow-auto pour le défilement -->
+        <div id="conteneur" class="relative w-[1200px] h-[1200px] mx-auto">
+            <img 
+                id="background-image" 
+                src="https://cdn.glitch.global/7d36b6e2-5421-4e85-8263-ed9a0268be67/air-force.png?v=1741271250453" 
+                alt="Basket Blanche"
+                class="w-full h-full"
+            />
+            <svg
+                id="product-svg"
+                version="1.0"
+                xmlns="http://www.w3.org/2000/svg"
+                width="1200px"
+                height="1200px"
+                viewBox="0 0 1200 1200"
+                preserveAspectRatio="xMidYMid meet"
+                class="absolute top-0 left-0 w-full h-full"
+            >
+                <g transform="translate(0,1200) scale(0.1,-0.1)">
+                    <path
+                        id="product-shape"
+                        fill="#ff7f00"
+                        d="M1267 7213 c-63 -274 -88 -430 -112 -700 -15 -170 -19 -623 -7 -718
+                        l7 -49 48 59 c45 57 80 121 125 227 33 77 49 82 257 89 201 7 247 16 352 66
+                        81 39 205 145 188 161 -5 5 -89 70 -185 145 -264 204 -282 225 -429 512 -68
+                        132 -135 255 -150 274 -14 19 -33 48 -42 63 -15 29 -16 28 -52 -129z"
+                    />
+                </g>
+            </svg>
+        </div>
+
+        <!-- Boutons pour changer la couleur -->
+        <div class="p-6 bg-gray-50">
+            <div class="flex flex-wrap justify-center gap-2">
+                <button class="color-btn bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded" onclick="changerCouleur('#ff0000')">Rouge</button>
+                <button class="color-btn bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded" onclick="changerCouleur('#0000ff')">Bleu</button>
+                <button class="color-btn bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded" onclick="changerCouleur('#008000')">Vert</button>
+                <button class="color-btn bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded" onclick="changerCouleur('#ffa500')">Orange</button>
+                <button class="color-btn bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded" onclick="changerCouleur('#800080')">Violet</button>
+            </div>
+        </div>
     </div>
 
-    <!-- Boutons pour changer la couleur -->
-    <div class="button-container">
-        <button class="color-btn red" onclick="changerCouleur('#ff0000')">Rouge</button>
-        <button class="color-btn blue" onclick="changerCouleur('#0000ff')">Bleu</button>
-        <button class="color-btn green" onclick="changerCouleur('#008000')">Vert</button>
-        <button class="color-btn orange" onclick="changerCouleur('#ffa500')">Orange</button>
-        <button class="color-btn purple" onclick="changerCouleur('#800080')">Violet</button>
+    <!-- Section de commande -->
+    <div class="mt-8 text-center">
+        <button class="bg-black text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-800 transition duration-300">
+            Commander Maintenant
+        </button>
     </div>
 
 </body>
