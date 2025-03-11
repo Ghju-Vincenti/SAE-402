@@ -7,7 +7,10 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jscolor/2.0.4/jscolor.js"></script>
 </head>
+
+
 <body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen p-4">
 
     <!-- En-tête -->
@@ -16,8 +19,32 @@
         <p class="text-gray-600">Choisissez la couleur de votre basket et passez commande.</p>
     </header>
 
+    <nav id="navbar" class="bg-color text-size-custom shadow-md">
+        <div class="container lx-auto px-6 py-6 flex justify-between items-center custom-pad">
+            <!-- Logo -->
+            <a href="#" class="text-2xl font-bold text-gray-800"></a>
+
+            <!-- Desktop Menu -->
+            <div id="home" class="hidden md:flex space-x-6">
+                <a href="#" class="text-white-600 hover:text-black">Home</a>
+                <a href="#" class="text-white-600 hover:text-black">Shop</a>
+                <a href="#" class="text-white-600 hover:text-black">About</a>
+                <a href="#" class="text-white-600 hover:text-black">Contact</a>
+            </div>
+
+    </nav>
+
+    <script>
+        const menuBtn = document.getElementById("menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        menuBtn.addEventListener("click", () => {
+            mobileMenu.classList.toggle("hidden");
+        });
+    </script>
+
     <!-- Conteneur principal -->
-    <div class="bg-white shadow-lg rounded-lg overflow-auto"> <!-- overflow-auto pour le défilement -->
+    <div class="bg-white shadow-lg rounded-lg"> 
         <div id="conteneur" class="relative w-[1200px] h-[1200px] mx-auto">
             <img 
                 id="background-image" 
@@ -33,7 +60,7 @@
                 height="1200px"
                 viewBox="0 0 1200 1200"
                 preserveAspectRatio="xMidYMid meet"
-                class="absolute top-0 left-0 w-full h-full"
+                class="absolute top-0 left-0 w-full h-full color-changing-svg"
             >
                 <g transform="translate(0,1200) scale(0.1,-0.1)">
                     <path
@@ -51,6 +78,7 @@
         <!-- Boutons pour changer la couleur -->
         <div class="p-6 bg-gray-50">
             <div class="flex flex-wrap justify-center gap-2">
+                <input class="jscolor {onFineChange:'changeColor(this)'}" value="ff7f00">
                 <button class="color-btn bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded" onclick="changerCouleur('#ff0000')">Rouge</button>
                 <button class="color-btn bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded" onclick="changerCouleur('#0000ff')">Bleu</button>
                 <button class="color-btn bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded" onclick="changerCouleur('#008000')">Vert</button>

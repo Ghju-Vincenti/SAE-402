@@ -2,15 +2,24 @@ function changerCouleur(color) {
     let shape = document.getElementById("product-shape");
 
     if (shape) {
-        console.log("L'élément #product-shape a été trouvé !");
-        console.log("Changement de couleur en : ", color);
-        
-        // Méthode 1 : setAttribute (si la première ne marche pas)
+        console.log("Changing color to:", color);
         shape.setAttribute("fill", color);
-
-        // Méthode 2 : CSS (pour certains navigateurs)
         shape.style.fill = color;
     } else {
-        console.error("Erreur : Element #product-shape introuvable !");
+        console.error("Error: #product-shape not found!");
+    }
+}
+
+// Function to handle jscolor picker
+function changeColor(picker) {
+    let shape = document.getElementById("product-shape");
+
+    if (shape) {
+        let color = picker.toHEXString(); // Get color from picker
+        console.log("Picker color selected:", color);
+        shape.setAttribute("fill", color);
+        shape.style.fill = color;
+    } else {
+        console.error("Error: #product-shape not found!");
     }
 }
